@@ -6,19 +6,22 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y build-essential kernel-package libncurses5-dev bzip2
   - chmod +x build.sh
-  - chmod +x $PWD/tools/dct/DrvGen.py
-
 # we're not installing anything
 install: true
-
 script:
   - ./build.sh
+  
+  after_success:
+  - cp arch/arm/boot/image.gz-dtb zimage
 
+  
 deploy:
-  provider: releases
-  api_key: "$GIT_OAUTH_TOKEN_KERNEL"
-  file: "$PWD/out/arch/arm64/boot/Image.gz-dtb"
   skip_cleanup: true
+  provider: releases
+  api_key: "$GITHUB_API_KEY"
+  file_glob: true
+  file: zimage*
   on:
     tags: true
-all_branches: true
+    repo: raymatech/Raibatsu-x556-3.18
+    branch: X556N
