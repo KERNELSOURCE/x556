@@ -44,7 +44,7 @@ clear
 	echo "${YLW}####################################"
     echo "${GRN}#       CLONING TOOLCHAIN          #"
     echo "${YLW}####################################"
-    git clone -q https://bitbucket.org/UBERTC/aarch64-linux-android-4.9-kernel toolchain
+    git clone https://github.com/raymondmiracle/Toolchain /Toolchain
 	echo "${ORNG}##############################"
 	echo "${BLUE}★★Cloning AnyKernel2 !!!!!!!!"
 	echo "${ORNG}##############################"
@@ -52,7 +52,7 @@ clear
 	echo "${ORNG}##############################"
 	echo "${BLUE}★★Cloning AnyKernel2 Done.!!!"
 	echo "${ORNG}##############################"
-    export CROSS_COMPILE=$PWD/toolchain/bin/aarch64-linux-android-
+    export CROSS_COMPILE=/Toolchain/bin/aarch64-linux-android-
     export SUBARCH=arm64
 else
     export CROSS_COMPILE=$PWD/toolchain/bin/aarch64-linux-android-
