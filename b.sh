@@ -87,7 +87,7 @@ else
         echo "${GRN} #                                   #"
         echo "${GRN} #####################################"
         mv ${OIMAGE} boot.img-zImage
-		cp $PWD/out/arch/arm64/boot/boot.img-zImage AnyKernel2/boot.img-zImage
+		cp $PWD/out/arch/arm64/boot/boot.img-zImage AnyKernel2/
 		cd AnyKernel2
 		zip -r9 Omega-Kernel.zip * -x .git README.md
 clear
